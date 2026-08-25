@@ -1,0 +1,88 @@
+import type { Listing } from '../lib/types'
+
+export const sampleListings: Listing[] = [
+  {
+    id: '1',
+    created_at: '2025-11-15T00:00:00Z',
+    title: 'Elegant Colonial in Dyer',
+    property_type: 'residential',
+    price: 425000,
+    address: '123 Maple Lane, Dyer, IN 46311',
+    specs: { beds: 4, baths: 3, sqft: 2800, year_built: 2018 },
+    image_url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80',
+    is_past_listing: false,
+    status: 'Featured',
+    description:
+      'Stunning colonial in sought-after Dyer neighborhood. Open floor plan with chef\'s kitchen, hardwood floors throughout, and a beautifully landscaped backyard. Minutes from top-rated schools and shopping.',
+  },
+  {
+    id: '2',
+    created_at: '2025-10-20T00:00:00Z',
+    title: 'Modern Condo — Chicago Loop',
+    property_type: 'residential',
+    price: 389000,
+    address: '456 S. Michigan Ave #1204, Chicago, IL 60605',
+    specs: { beds: 2, baths: 2, sqft: 1100, year_built: 2020 },
+    image_url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80',
+    is_past_listing: false,
+    status: 'Active',
+    description:
+      'Sleek high-rise condo with panoramic lake views. Floor-to-ceiling windows, modern finishes, in-unit laundry, and full amenity building with doorman, gym, and rooftop deck.',
+  },
+  {
+    id: '3',
+    created_at: '2025-09-10T00:00:00Z',
+    title: 'Waterfront Estate — Naples, FL',
+    property_type: 'residential',
+    price: 1250000,
+    address: '789 Gulf Shore Blvd, Naples, FL 34102',
+    specs: { beds: 5, baths: 4, sqft: 4200, year_built: 2015 },
+    image_url: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=600&q=80',
+    is_past_listing: true,
+    status: 'Sold',
+    description:
+      'Exquisite waterfront estate with private dock, resort-style pool, and sweeping Gulf views. Gourmet kitchen, wine cellar, and luxurious primary suite. Sold above asking price.',
+  },
+  {
+    id: '4',
+    created_at: '2025-08-05T00:00:00Z',
+    title: 'Retail Plaza — NW Indiana',
+    property_type: 'commercial',
+    price: 1800000,
+    address: '1001 US Highway 30, Schererville, IN 46375',
+    specs: { sqft: 15000, commercial_type: 'Retail Plaza' },
+    image_url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80',
+    is_past_listing: false,
+    status: 'Featured',
+    description:
+      'Prime retail plaza on high-traffic US 30 corridor. Multi-tenant with long-term leases in place. Excellent cap rate and strong foot traffic in growing Northwest Indiana market.',
+  },
+  {
+    id: '5',
+    created_at: '2025-07-12T00:00:00Z',
+    title: 'Industrial Warehouse — Fort Myers',
+    property_type: 'commercial',
+    price: 950000,
+    address: '2200 Enterprise Ave, Fort Myers, FL 33916',
+    specs: { sqft: 22000, commercial_type: 'Warehouse/Industrial' },
+    image_url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
+    is_past_listing: true,
+    status: 'Sold',
+    description:
+      'Well-maintained industrial warehouse with loading docks, high ceilings, and excellent highway access. Sold to a growing logistics company expanding into Southwest Florida.',
+  },
+  {
+    id: '6',
+    created_at: '2025-12-01T00:00:00Z',
+    title: 'Charming Ranch — Schererville',
+    property_type: 'residential',
+    price: 299000,
+    address: '88 Birchwood Dr, Schererville, IN 46375',
+    specs: { beds: 3, baths: 2, sqft: 1650, year_built: 2005 },
+    image_url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
+    is_past_listing: false,
+    status: 'Active',
+    description:
+      'Well-maintained ranch home with open concept living, updated kitchen, finished basement, and fenced backyard. Perfect for families in a quiet, established Schererville neighborhood.',
+  },
+]
