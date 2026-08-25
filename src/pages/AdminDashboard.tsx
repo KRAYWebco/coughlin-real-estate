@@ -26,6 +26,7 @@ function SubmissionsFeed() {
   const [filter, setFilter] = useState<'all' | 'unread' | 'read' | 'contacted'>('all')
   const [loading, setLoading] = useState(true)
   const [dataError, setDataError] = useState(false)
+  const [usingLocalData, setUsingLocalData] = useState(false)
 
   const fetchSubmissions = useCallback(async () => {
     setLoading(true)
