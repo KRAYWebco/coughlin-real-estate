@@ -1,4 +1,4 @@
-import { Phone, ChevronDown } from 'lucide-react'
+import { Phone, ArrowDownRight, Check } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const states = [
@@ -10,112 +10,95 @@ const states = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80')`,
-        }}
-      />
-
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/70 via-charcoal-950/50 to-charcoal-950/80" />
-
-      {/* Listing Leaders brand lockup */}
-      <motion.div
-        initial={{ opacity: 0, y: -12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.15 }}
-        className="absolute top-24 left-1/2 -translate-x-1/2 z-10 w-[min(320px,78vw)] rounded-sm bg-white/95 px-6 py-4 shadow-lg backdrop-blur-sm ring-1 ring-white/30"
-      >
-        <img
-          src="/listing-leaders-logo.svg"
-          alt="Listing Leaders — Changing Real Estate Forever"
-          className="w-full h-auto"
-        />
-      </motion.div>
-
-      {/* Content */}
-      <div className="relative z-10 container-max mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* License Badges */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center justify-center gap-2 mb-8"
-        >
-          {states.map((state, i) => (
-            <motion.span
-              key={state.code}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
-              className="px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-semibold tracking-widest rounded-sm"
-              title={state.label}
+    <section className="relative overflow-hidden bg-white pt-28 pb-16 md:pt-40 md:pb-24">
+      <div className="container-max mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-700"
             >
-              {state.code}
-            </motion.span>
-          ))}
-        </motion.div>
+              <span>Licensed Broker</span>
+              <span className="h-1 w-1 rounded-full bg-brand-500" />
+              <span>IN · IL · FL · TX</span>
+            </motion.div>
 
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 max-w-5xl mx-auto leading-tight"
-        >
-          Residential, Commercial, Multi-State
-          <span className="block text-brand-300 mt-2">Christine Coughlin</span>
-        </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="max-w-4xl font-serif text-5xl leading-[1.05] text-brand-900 sm:text-6xl md:text-7xl"
+            >
+              Clear decisions for your next move.
+            </motion.h1>
 
-        {/* Subheading */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-warm-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed"
-        >
-          Guiding buyers and sellers with expert market clarity, responsive service,
-          and a stress-free experience.
-        </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mt-7 max-w-xl text-lg leading-relaxed text-brand-800 md:text-xl"
+            >
+              Christine Coughlin brings calm guidance, sharp market clarity, and responsive service to residential and commercial real estate.
+            </motion.p>
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <a href="tel:2195085555" className="btn-primary text-base">
-            <Phone className="w-4 h-4" />
-            Call or Text (219) 508-5555
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-sm hover:bg-white/10 transition-all duration-300"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center"
+            >
+              <a href="#contact" className="btn-primary text-base">
+                Start a Conversation
+                <ArrowDownRight className="h-4 w-4" />
+              </a>
+              <a
+                href="tel:2195085555"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 transition-colors hover:text-brand-900"
+              >
+                <Phone className="h-4 w-4" />
+                (219) 508-5555
+              </a>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative border-l-2 border-brand-500 pl-7 md:pl-10"
           >
-            Get in Touch
-          </a>
-        </motion.div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">
+              One trusted point of contact
+            </p>
+            <p className="mt-5 max-w-md font-serif text-3xl leading-tight text-brand-900 md:text-4xl">
+              Residential, commercial, and multi-state expertise in one place.
+            </p>
+            <ul className="mt-8 space-y-4 text-sm text-brand-800">
+              {[
+                'Buyer and seller representation',
+                'Commercial investment and leasing',
+                'Licensed across four states',
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-3">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-50 text-brand-600">
+                    <Check className="h-3.5 w-3.5" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-10 flex flex-wrap gap-2">
+              {states.map((state) => (
+                <span key={state.code} title={state.label} className="border border-brand-200 px-3 py-1.5 text-xs font-semibold tracking-widest text-brand-700">
+                  {state.code}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.a
-        href="#about"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 hover:text-white/80 transition-colors"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          <ChevronDown className="w-6 h-6" />
-        </motion.div>
-      </motion.a>
     </section>
   )
 }

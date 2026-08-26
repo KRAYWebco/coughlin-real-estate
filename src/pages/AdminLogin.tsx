@@ -50,43 +50,43 @@ export default function AdminLogin() {
   }
 
   return (
-    <main className="min-h-screen bg-warm-50 flex items-center justify-center px-4 py-12">
+    <main className="min-h-screen bg-white flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <a href="/" className="inline-block">
-            <h1 className="font-serif text-2xl font-semibold text-charcoal-900">Christine Coughlin</h1>
-            <p className="text-xs tracking-[0.2em] uppercase text-warm-500">Admin Portal</p>
+            <h1 className="font-serif text-2xl font-semibold text-brand-900">Christine Coughlin</h1>
+            <p className="text-xs tracking-[0.2em] uppercase text-brand-700">Admin Portal</p>
           </a>
         </div>
 
-        <section className="bg-white rounded-sm shadow-lg border border-warm-200 p-8">
+        <section className="bg-white rounded-sm shadow-lg border border-brand-200 p-8">
           <div className="flex items-center gap-2 mb-6">
             <Lock className="w-5 h-5 text-brand-500" />
-            <h2 className="font-serif text-xl text-charcoal-900">{isSignUp ? 'Create Account' : 'Sign In'}</h2>
+            <h2 className="font-serif text-xl text-brand-900">{isSignUp ? 'Create Account' : 'Sign In'}</h2>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-charcoal-700 mb-1.5" htmlFor="admin-email">Email</label>
+              <label className="block text-sm font-medium text-brand-800 mb-1.5" htmlFor="admin-email">Email</label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-warm-400" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-400" />
                 <input id="admin-email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="input-field pl-10" placeholder="admin@example.com" />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-charcoal-700 mb-1.5" htmlFor="admin-password">Password</label>
+              <label className="block text-sm font-medium text-brand-800 mb-1.5" htmlFor="admin-password">Password</label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-warm-400" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-400" />
                 <input id="admin-password" type={showPassword ? 'text' : 'password'} required minLength={6} value={password} onChange={(e) => setPassword(e.target.value)} className="input-field pl-10 pr-10" placeholder="••••••••" />
-                <button type="button" aria-label={showPassword ? 'Hide password' : 'Show password'} onClick={() => setShowPassword((value) => !value)} className="absolute right-3 top-1/2 -translate-y-1/2 text-warm-400 hover:text-warm-600">
+                <button type="button" aria-label={showPassword ? 'Hide password' : 'Show password'} onClick={() => setShowPassword((value) => !value)} className="absolute right-3 top-1/2 -translate-y-1/2 text-brand-400 hover:text-brand-700">
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
               </div>
             </div>
 
             <button type="submit" disabled={loading} className="btn-primary w-full justify-center disabled:opacity-50">
-              {loading ? <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> : isSignUp ? 'Create Account' : 'Sign In'}
+              {loading ? <div className="w-4 h-4 border-2 border-brand-600 border-t-transparent rounded-full animate-spin" /> : isSignUp ? 'Create Account' : 'Sign In'}
             </button>
           </form>
 
@@ -97,7 +97,7 @@ export default function AdminLogin() {
           </div>
         </section>
 
-        <p className="text-center text-xs text-warm-500 mt-6">Protected admin area. Authorized personnel only.</p>
+        <p className="text-center text-xs text-brand-700 mt-6">Protected admin area. Authorized personnel only.</p>
       </div>
     </main>
   )

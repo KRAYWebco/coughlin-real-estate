@@ -84,10 +84,10 @@ function SubmissionsFeed() {
 
   const statusColor = (status: string) => {
     switch (status) {
-      case 'unread': return 'bg-amber-100 text-amber-700'
-      case 'read': return 'bg-blue-100 text-blue-700'
-      case 'contacted': return 'bg-emerald-100 text-emerald-700'
-      default: return 'bg-gray-100 text-gray-600'
+      case 'unread': return 'bg-brand-50 text-brand-700 border border-brand-200'
+      case 'read': return 'bg-white text-brand-700 border border-brand-200'
+      case 'contacted': return 'bg-brand-100 text-brand-800 border border-brand-200'
+      default: return 'bg-white text-brand-700 border border-brand-200'
     }
   }
 
@@ -101,8 +101,8 @@ function SubmissionsFeed() {
             onClick={() => setFilter(f)}
             className={`px-4 py-2 text-sm font-medium rounded-sm transition-all ${
               filter === f
-                ? 'bg-charcoal-900 text-white'
-                : 'bg-warm-100 text-charcoal-600 hover:bg-warm-200'
+                ? 'bg-white border-2 border-brand-600 text-brand-700'
+                : 'bg-white border border-brand-200 text-brand-700 hover:bg-brand-50'
             }`}
           >
             {f.charAt(0).toUpperCase() + f.slice(1)}
@@ -113,48 +113,48 @@ function SubmissionsFeed() {
       {dataError ? (
         <SupabaseDataNotice resource="submissions" />
       ) : loading ? (
-        <div className="text-center py-12 text-warm-500">Loading submissions...</div>
+        <div className="text-center py-12 text-brand-700">Loading submissions...</div>
       ) : submissions.length === 0 ? (
-        <div className="text-center py-12 text-warm-500">No submissions found.</div>
+        <div className="text-center py-12 text-brand-700">No submissions found.</div>
       ) : (
         <div className="space-y-3">
           {submissions.map((sub) => (
             <div
               key={sub.id}
               className={`bg-white border rounded-sm p-5 transition-all hover:shadow-sm ${
-                sub.status === 'unread' ? 'border-brand-300 bg-brand-50/30' : 'border-warm-200'
+                sub.status === 'unread' ? 'border-brand-300 bg-brand-50' : 'border-brand-200'
               }`}
             >
               <div className="flex items-start justify-between gap-4 mb-3">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <h4 className="font-semibold text-charcoal-900">{sub.name}</h4>
+                    <h4 className="font-semibold text-brand-900">{sub.name}</h4>
                     <span className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded-sm ${statusColor(sub.status)}`}>
                       {sub.status}
                     </span>
                   </div>
-                  <p className="text-sm text-warm-500">{formatDate(sub.created_at)}</p>
+                  <p className="text-sm text-brand-700">{formatDate(sub.created_at)}</p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm text-charcoal-600 mb-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm text-brand-800 mb-3">
                 <div className="flex items-center gap-1.5">
-                  <Mail className="w-3.5 h-3.5 text-warm-400" />
+                  <Mail className="w-3.5 h-3.5 text-brand-400" />
                   <a href={`mailto:${sub.email}`} className="hover:text-brand-600">{sub.email}</a>
                 </div>
                 {sub.phone && (
                   <div className="flex items-center gap-1.5">
-                    <Phone className="w-3.5 h-3.5 text-warm-400" />
+                    <Phone className="w-3.5 h-3.5 text-brand-400" />
                     <a href={`tel:${sub.phone}`} className="hover:text-brand-600">{sub.phone}</a>
                   </div>
                 )}
                 <div className="flex items-center gap-1.5">
-                  <MessageSquare className="w-3.5 h-3.5 text-warm-400" />
+                  <MessageSquare className="w-3.5 h-3.5 text-brand-400" />
                   <span className="font-medium">{sub.service}</span>
                 </div>
               </div>
 
-              <p className="text-sm text-charcoal-700 bg-warm-50 p-3 rounded-sm mb-4 border border-warm-100">
+              <p className="text-sm text-brand-800 bg-white p-3 rounded-sm mb-4 border border-brand-100">
                 {sub.message}
               </p>
 
@@ -163,7 +163,7 @@ function SubmissionsFeed() {
                 {sub.status === 'unread' && (
                   <button
                     onClick={() => updateStatus(sub.id, 'read')}
-                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-blue-50 text-blue-700 rounded-sm hover:bg-blue-100 transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-brand-200 text-brand-700 rounded-sm hover:bg-brand-50 transition-colors"
                   >
                     <Eye className="w-3 h-3" />
                     Mark as Read
@@ -171,14 +171,14 @@ function SubmissionsFeed() {
                 )}
                 <a
                   href={`tel:${sub.phone}`}
-                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-emerald-50 text-emerald-700 rounded-sm hover:bg-emerald-100 transition-colors"
+                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white border border-brand-200 text-brand-700 rounded-sm hover:bg-brand-50 transition-colors"
                 >
                   <Phone className="w-3 h-3" />
                   Call Client
                 </a>
                 <a
                   href={`mailto:${sub.email}`}
-                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-warm-50 text-charcoal-600 rounded-sm hover:bg-warm-100 transition-colors"
+                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white text-brand-800 rounded-sm hover:bg-brand-50 transition-colors"
                 >
                   <Mail className="w-3 h-3" />
                   Email Client
@@ -186,7 +186,7 @@ function SubmissionsFeed() {
                 {sub.status !== 'contacted' && (
                   <button
                     onClick={() => updateStatus(sub.id, 'contacted')}
-                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-warm-50 text-charcoal-600 rounded-sm hover:bg-warm-100 transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-white text-brand-800 rounded-sm hover:bg-brand-50 transition-colors"
                   >
                     <ExternalLink className="w-3 h-3" />
                     Mark Contacted
@@ -198,7 +198,7 @@ function SubmissionsFeed() {
         </div>
       )}
       {usingLocalData && (
-        <p className="mt-6 text-center text-xs text-amber-700 bg-amber-50 border border-amber-200 p-3 rounded-sm">
+        <p className="mt-6 text-center text-xs text-brand-700 bg-white border border-brand-200 p-3 rounded-sm">
           Supabase tables are not available yet. Showing leads saved in this browser.
         </p>
       )}
@@ -327,7 +327,7 @@ function ListingManager() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <p className="text-sm text-warm-500">{listings.length} listing(s)</p>
+        <p className="text-sm text-brand-700">{listings.length} listing(s)</p>
         <button
           onClick={() => {
             setShowForm(!showForm)
@@ -343,40 +343,40 @@ function ListingManager() {
 
       {/* Form */}
       {showForm && (
-        <div className="bg-warm-50 border border-warm-200 rounded-sm p-6 mb-6">
+        <div className="bg-white border border-brand-200 rounded-sm p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="font-serif text-lg text-charcoal-900">
+            <h3 className="font-serif text-lg text-brand-900">
               {editingId ? 'Edit Listing' : 'New Listing'}
             </h3>
             <button onClick={() => { setShowForm(false); setEditingId(null) }}>
-              <X className="w-5 h-5 text-warm-400 hover:text-charcoal-700" />
+              <X className="w-5 h-5 text-brand-400 hover:text-brand-800" />
             </button>
           </div>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-charcoal-700 mb-1">Title *</label>
+                <label className="block text-sm font-medium text-brand-800 mb-1">Title *</label>
                 <input name="title" required value={form.title} onChange={handleChange} className="input-field" placeholder="Property title" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-charcoal-700 mb-1">Price *</label>
+                <label className="block text-sm font-medium text-brand-800 mb-1">Price *</label>
                 <input name="price" type="number" required value={form.price || ''} onChange={handleChange} className="input-field" placeholder="425000" />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-charcoal-700 mb-1">Address *</label>
+              <label className="block text-sm font-medium text-brand-800 mb-1">Address *</label>
               <input name="address" required value={form.address} onChange={handleChange} className="input-field" placeholder="Full address" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label className="block text-sm font-medium text-charcoal-700 mb-1">Type *</label>
+                <label className="block text-sm font-medium text-brand-800 mb-1">Type *</label>
                 <select name="property_type" value={form.property_type} onChange={handleChange} className="input-field">
                   <option value="residential">Residential</option>
                   <option value="commercial">Commercial</option>
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-charcoal-700 mb-1">Status</label>
+                <label className="block text-sm font-medium text-brand-800 mb-1">Status</label>
                 <select name="status" value={form.status} onChange={handleChange} className="input-field">
                   <option value="Active">Active</option>
                   <option value="Featured">Featured</option>
@@ -384,7 +384,7 @@ function ListingManager() {
                 </select>
               </div>
               <div className="flex items-end">
-                <label className="flex items-center gap-2 text-sm text-charcoal-700 cursor-pointer pb-3">
+                <label className="flex items-center gap-2 text-sm text-brand-800 cursor-pointer pb-3">
                   <input type="checkbox" name="is_past_listing" checked={form.is_past_listing} onChange={handleChange} className="w-4 h-4 accent-brand-500" />
                   Past Listing
                 </label>
@@ -392,24 +392,24 @@ function ListingManager() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label className="block text-sm font-medium text-charcoal-700 mb-1">Beds</label>
+                <label className="block text-sm font-medium text-brand-800 mb-1">Beds</label>
                 <input name="beds" type="number" value={form.beds} onChange={handleChange} className="input-field" placeholder="4" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-charcoal-700 mb-1">Baths</label>
+                <label className="block text-sm font-medium text-brand-800 mb-1">Baths</label>
                 <input name="baths" type="number" value={form.baths} onChange={handleChange} className="input-field" placeholder="3" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-charcoal-700 mb-1">Sq Ft</label>
+                <label className="block text-sm font-medium text-brand-800 mb-1">Sq Ft</label>
                 <input name="sqft" type="number" value={form.sqft} onChange={handleChange} className="input-field" placeholder="2800" />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-charcoal-700 mb-1">Image URL</label>
+              <label className="block text-sm font-medium text-brand-800 mb-1">Image URL</label>
               <input name="image_url" value={form.image_url} onChange={handleChange} className="input-field" placeholder="https://..." />
             </div>
             <div>
-              <label className="block text-sm font-medium text-charcoal-700 mb-1">Description</label>
+              <label className="block text-sm font-medium text-brand-800 mb-1">Description</label>
               <textarea name="description" rows={3} value={form.description} onChange={handleChange} className="input-field resize-none" placeholder="Property description..." />
             </div>
             <button type="submit" className="btn-primary text-sm">
@@ -423,39 +423,39 @@ function ListingManager() {
       {dataError ? (
         <SupabaseDataNotice resource="listings" />
       ) : loading ? (
-        <div className="text-center py-12 text-warm-500">Loading listings...</div>
+        <div className="text-center py-12 text-brand-700">Loading listings...</div>
       ) : listings.length === 0 ? (
-        <div className="text-center py-12 text-warm-500">
+        <div className="text-center py-12 text-brand-700">
           No listings yet. Add your first listing above.
         </div>
       ) : (
         <div className="space-y-3">
           {listings.map((listing) => (
-            <div key={listing.id} className="bg-white border border-warm-200 rounded-sm p-4 flex items-center gap-4 hover:shadow-sm transition-all">
+            <div key={listing.id} className="bg-white border border-brand-200 rounded-sm p-4 flex items-center gap-4 hover:shadow-sm transition-all">
               <img
                 src={listing.image_url}
                 alt={listing.title}
                 className="w-16 h-16 object-cover rounded-sm flex-shrink-0"
               />
               <div className="flex-1 min-w-0">
-                <h4 className="font-semibold text-charcoal-900 truncate">{listing.title}</h4>
-                <p className="text-sm text-warm-500 truncate">{listing.address}</p>
+                <h4 className="font-semibold text-brand-900 truncate">{listing.title}</h4>
+                <p className="text-sm text-brand-700 truncate">{listing.address}</p>
               </div>
               <div className="text-right flex-shrink-0">
                 <p className="font-serif font-bold text-brand-600">{formatPrice(listing.price)}</p>
                 <span className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded-sm ${
-                  listing.status === 'Sold' ? 'bg-charcoal-100 text-charcoal-600' :
+                  listing.status === 'Sold' ? 'bg-white border border-brand-200 text-brand-700' :
                   listing.status === 'Featured' ? 'bg-brand-100 text-brand-700' :
-                  'bg-emerald-100 text-emerald-700'
+                  'bg-brand-50 border border-brand-200 text-brand-700'
                 }`}>
                   {listing.status}
                 </span>
               </div>
               <div className="flex items-center gap-1">
-                <button onClick={() => handleEdit(listing)} className="p-2 text-warm-400 hover:text-brand-600 transition-colors">
+                <button onClick={() => handleEdit(listing)} className="p-2 text-brand-400 hover:text-brand-600 transition-colors">
                   <Pencil className="w-4 h-4" />
                 </button>
-                <button onClick={() => handleDelete(listing.id)} className="p-2 text-warm-400 hover:text-red-600 transition-colors">
+                <button onClick={() => handleDelete(listing.id)} className="p-2 text-brand-400 hover:text-brand-600 transition-colors">
                   <Trash2 className="w-4 h-4" />
                 </button>
               </div>
@@ -482,23 +482,23 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-warm-50">
+    <div className="min-h-screen bg-white text-brand-900">
       {/* Header */}
-      <header className="bg-white border-b border-warm-200 px-4 sm:px-6 py-4">
+      <header className="bg-white border-b border-brand-200 px-4 sm:px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div>
-            <h1 className="font-serif text-xl font-semibold text-charcoal-900">
+            <h1 className="font-serif text-xl font-semibold text-brand-900">
               Admin Dashboard
             </h1>
-            <p className="text-xs text-warm-500">Christine Coughlin Realty</p>
+            <p className="text-xs text-brand-700">Christine Coughlin Realty</p>
           </div>
           <div className="flex items-center gap-3">
-            <a href="/" className="text-sm text-warm-500 hover:text-charcoal-700 transition-colors">
+            <a href="/" className="text-sm text-brand-700 hover:text-brand-800 transition-colors">
               View Site
             </a>
             <button
               onClick={handleSignOut}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-charcoal-600 bg-warm-100 rounded-sm hover:bg-warm-200 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-brand-800 bg-brand-50 rounded-sm hover:bg-brand-100 transition-colors"
             >
               <LogOut className="w-4 h-4" />
               Sign Out
@@ -509,11 +509,11 @@ export default function AdminDashboard() {
 
       {/* Tabs */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-6">
-        <div className="flex gap-1 bg-warm-100 p-1 rounded-sm w-fit">
+        <div className="flex gap-1 bg-brand-50 p-1 rounded-sm w-fit">
           <button
             onClick={() => setTab('submissions')}
             className={`px-6 py-2.5 text-sm font-semibold rounded-sm transition-all ${
-              tab === 'submissions' ? 'bg-white text-charcoal-900 shadow-sm' : 'text-warm-500 hover:text-charcoal-700'
+              tab === 'submissions' ? 'bg-white text-brand-900 shadow-sm' : 'text-brand-700 hover:text-brand-800'
             }`}
           >
             <MessageSquare className="w-4 h-4 inline mr-2" />
@@ -522,7 +522,7 @@ export default function AdminDashboard() {
           <button
             onClick={() => setTab('listings')}
             className={`px-6 py-2.5 text-sm font-semibold rounded-sm transition-all ${
-              tab === 'listings' ? 'bg-white text-charcoal-900 shadow-sm' : 'text-warm-500 hover:text-charcoal-700'
+              tab === 'listings' ? 'bg-white text-brand-900 shadow-sm' : 'text-brand-700 hover:text-brand-800'
             }`}
           >
             <Plus className="w-4 h-4 inline mr-2" />

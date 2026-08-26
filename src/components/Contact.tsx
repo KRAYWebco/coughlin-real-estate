@@ -72,36 +72,36 @@ export default function Contact() {
       <div className="container-max mx-auto">
         {/* Call to Action Banner */}
         <AnimatedSection>
-          <div className="bg-charcoal-950 rounded-sm p-8 md:p-12 mb-16 text-center">
-            <p className="text-sm font-semibold tracking-[0.2em] uppercase text-brand-400 mb-3">
+          <div className="border-y-2 border-brand-500 bg-white p-8 md:p-12 mb-16 text-center">
+            <p className="text-sm font-semibold tracking-[0.2em] uppercase text-brand-600 mb-3">
               Ready to Move?
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">Let's Talk.</h2>
-            <p className="text-warm-400 mb-8 max-w-lg mx-auto">
+            <h2 className="font-serif text-3xl md:text-4xl text-brand-900 mb-4">Let's Talk.</h2>
+            <p className="text-brand-700 mb-8 max-w-lg mx-auto">
               Have questions? Need expert guidance? Christine is always available
               to discuss your real estate goals.
             </p>
             <a
               href="tel:2195085555"
-              className="inline-flex items-center gap-3 text-2xl md:text-3xl font-serif text-white hover:text-brand-300 transition-colors"
+              className="inline-flex items-center gap-3 text-2xl md:text-3xl font-serif text-brand-900 hover:text-brand-600 transition-colors"
             >
-              <Phone className="w-6 h-6 text-brand-400" />
+              <Phone className="w-6 h-6 text-brand-600" />
               (219) 508-5555
             </a>
-            <p className="text-warm-500 text-sm mt-3">Call or Text — Always Available</p>
+            <p className="text-brand-700 text-sm mt-3">Call or Text — Always Available</p>
           </div>
         </AnimatedSection>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Form */}
           <AnimatedSection className="lg:col-span-3">
-            <h3 className="font-serif text-2xl text-charcoal-900 mb-6">Send a Message</h3>
+            <h3 className="font-serif text-2xl text-brand-900 mb-6">Send a Message</h3>
 
             {submitted ? (
-              <div className="bg-emerald-50 border border-emerald-200 rounded-sm p-8 text-center">
-                <CheckCircle className="w-12 h-12 text-emerald-500 mx-auto mb-4" />
-                <h4 className="font-serif text-xl text-charcoal-900 mb-2">Message Sent!</h4>
-                <p className="text-charcoal-600 mb-6">
+              <div className="bg-white border border-brand-200 rounded-sm p-8 text-center">
+                <CheckCircle className="w-12 h-12 text-brand-500 mx-auto mb-4" />
+                <h4 className="font-serif text-xl text-brand-900 mb-2">Message Sent!</h4>
+                <p className="text-brand-800 mb-6">
                   Thank you for reaching out. Christine will review your message and get
                   back to you shortly.
                 </p>
@@ -116,7 +116,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-charcoal-700 mb-1.5">
+                    <label className="block text-sm font-medium text-brand-800 mb-1.5">
                       Full Name *
                     </label>
                     <input
@@ -130,7 +130,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-charcoal-700 mb-1.5">
+                    <label className="block text-sm font-medium text-brand-800 mb-1.5">
                       Email *
                     </label>
                     <input
@@ -147,7 +147,7 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-charcoal-700 mb-1.5">
+                    <label className="block text-sm font-medium text-brand-800 mb-1.5">
                       Phone
                     </label>
                     <input
@@ -160,7 +160,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-charcoal-700 mb-1.5">
+                    <label className="block text-sm font-medium text-brand-800 mb-1.5">
                       Service Needed *
                     </label>
                     <select
@@ -181,7 +181,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-charcoal-700 mb-1.5">
+                  <label className="block text-sm font-medium text-brand-800 mb-1.5">
                     Message *
                   </label>
                   <textarea
@@ -202,7 +202,7 @@ export default function Contact() {
                 >
                   {submitting ? (
                     <span className="flex items-center gap-2">
-                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <div className="w-4 h-4 border-2 border-brand-600 border-t-transparent rounded-full animate-spin" />
                       Sending...
                     </span>
                   ) : (
@@ -218,33 +218,33 @@ export default function Contact() {
 
           {/* Contact Info Sidebar */}
           <AnimatedSection delay={0.15} className="lg:col-span-2">
-            <div className="bg-warm-50 rounded-sm p-8 border border-warm-200 h-full">
-              <h3 className="font-serif text-xl text-charcoal-900 mb-6">Direct Contact</h3>
+            <div className="bg-white rounded-sm p-8 border border-brand-200 h-full">
+              <h3 className="font-serif text-xl text-brand-900 mb-6">Direct Contact</h3>
 
               <div className="space-y-6">
                 <div>
-                  <p className="text-sm font-medium text-warm-500 mb-1">Phone</p>
+                  <p className="text-sm font-medium text-brand-700 mb-1">Phone</p>
                   <a
                     href="tel:2195085555"
-                    className="text-lg font-semibold text-charcoal-900 hover:text-brand-600 transition-colors"
+                    className="text-lg font-semibold text-brand-900 hover:text-brand-600 transition-colors"
                   >
                     (219) 508-5555
                   </a>
-                  <p className="text-sm text-warm-500">Call or Text</p>
+                  <p className="text-sm text-brand-700">Call or Text</p>
                 </div>
 
                 <div>
-                  <p className="text-sm font-medium text-warm-500 mb-1">Email</p>
+                  <p className="text-sm font-medium text-brand-700 mb-1">Email</p>
                   <a
                     href="mailto:nwi.broker.chris@gmail.com"
-                    className="text-lg font-semibold text-charcoal-900 hover:text-brand-600 transition-colors break-all"
+                    className="text-lg font-semibold text-brand-900 hover:text-brand-600 transition-colors break-all"
                   >
                     nwi.broker.chris@gmail.com
                   </a>
                 </div>
 
                 <div>
-                  <p className="text-sm font-medium text-warm-500 mb-2">Licensed In</p>
+                  <p className="text-sm font-medium text-brand-700 mb-2">Licensed In</p>
                   <div className="flex flex-wrap gap-2">
                     {['Indiana', 'Illinois', 'Florida', 'Texas'].map((state) => (
                       <span key={state} className="badge">
@@ -254,8 +254,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-warm-200">
-                  <p className="text-sm text-warm-500 leading-relaxed">
+                <div className="pt-4 border-t border-brand-200">
+                  <p className="text-sm text-brand-700 leading-relaxed">
                     Christine typically responds within a few hours during business
                     days. For urgent matters, calling or texting is the fastest way
                     to connect.

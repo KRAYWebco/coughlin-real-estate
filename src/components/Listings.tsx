@@ -23,7 +23,7 @@ function ListingCard({ listing, onClick }: { listing: Listing; onClick: () => vo
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.3 }}
       onClick={onClick}
-      className="group cursor-pointer bg-white rounded-sm overflow-hidden border border-warm-200 hover:shadow-xl transition-all duration-300"
+      className="group cursor-pointer bg-white rounded-sm overflow-hidden border border-brand-200 hover:shadow-xl transition-all duration-300"
     >
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -36,16 +36,16 @@ function ListingCard({ listing, onClick }: { listing: Listing; onClick: () => vo
         <span
           className={`absolute top-3 left-3 px-3 py-1 text-xs font-bold tracking-wider uppercase rounded-sm ${
             listing.status === 'Sold'
-              ? 'bg-charcoal-800 text-white'
+              ? 'bg-white border border-brand-600 text-brand-700'
               : listing.status === 'Featured'
-              ? 'bg-brand-500 text-white'
-              : 'bg-emerald-600 text-white'
+              ? 'bg-white border border-brand-600 text-brand-700'
+              : 'bg-white border border-brand-500 text-brand-700'
           }`}
         >
           {listing.status}
         </span>
         {/* Type Badge */}
-        <span className="absolute top-3 right-3 px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-white/90 backdrop-blur-sm text-charcoal-700 rounded-sm">
+        <span className="absolute top-3 right-3 px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase bg-white/90 backdrop-blur-sm text-brand-800 rounded-sm">
           {listing.property_type}
         </span>
       </div>
@@ -55,16 +55,16 @@ function ListingCard({ listing, onClick }: { listing: Listing; onClick: () => vo
         <p className="text-2xl font-serif font-bold text-brand-600 mb-1">
           {formatPrice(listing.price)}
         </p>
-        <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-1">
+        <h3 className="font-serif text-lg font-semibold text-brand-900 mb-1">
           {listing.title}
         </h3>
-        <div className="flex items-center gap-1.5 text-sm text-warm-500 mb-3">
+        <div className="flex items-center gap-1.5 text-sm text-brand-700 mb-3">
           <MapPin className="w-3.5 h-3.5" />
           {listing.address}
         </div>
 
         {/* Specs */}
-        <div className="flex items-center gap-4 text-sm text-charcoal-500 border-t border-warm-100 pt-3">
+        <div className="flex items-center gap-4 text-sm text-brand-700 border-t border-brand-100 pt-3">
           {listing.specs.beds && (
             <div className="flex items-center gap-1">
               <Bed className="w-3.5 h-3.5" />
@@ -84,7 +84,7 @@ function ListingCard({ listing, onClick }: { listing: Listing; onClick: () => vo
             </div>
           )}
           {listing.specs.commercial_type && (
-            <span className="text-xs font-medium bg-warm-100 px-2 py-0.5 rounded-sm">
+            <span className="text-xs font-medium bg-brand-50 px-2 py-0.5 rounded-sm">
               {listing.specs.commercial_type}
             </span>
           )}
@@ -100,7 +100,7 @@ function ListingModal({ listing, onClose }: { listing: Listing; onClose: () => v
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-charcoal-950/60 backdrop-blur-sm"
+      className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-brand-950/20 backdrop-blur-sm"
       onClick={onClose}
     >
       <motion.div
@@ -122,15 +122,15 @@ function ListingModal({ listing, onClose }: { listing: Listing; onClose: () => v
             onClick={onClose}
             className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
           >
-            <X className="w-5 h-5 text-charcoal-700" />
+            <X className="w-5 h-5 text-brand-800" />
           </button>
           <span
             className={`absolute top-4 left-4 px-3 py-1 text-xs font-bold tracking-wider uppercase rounded-sm ${
               listing.status === 'Sold'
-                ? 'bg-charcoal-800 text-white'
+                ? 'bg-white border border-brand-600 text-brand-700'
                 : listing.status === 'Featured'
-                ? 'bg-brand-500 text-white'
-                : 'bg-emerald-600 text-white'
+                ? 'bg-white border border-brand-600 text-brand-700'
+                : 'bg-white border border-brand-500 text-brand-700'
             }`}
           >
             {listing.status}
@@ -142,37 +142,37 @@ function ListingModal({ listing, onClose }: { listing: Listing; onClose: () => v
           <p className="text-3xl font-serif font-bold text-brand-600 mb-2">
             {formatPrice(listing.price)}
           </p>
-          <h3 className="font-serif text-2xl font-semibold text-charcoal-900 mb-2">
+          <h3 className="font-serif text-2xl font-semibold text-brand-900 mb-2">
             {listing.title}
           </h3>
-          <div className="flex items-center gap-1.5 text-sm text-warm-500 mb-6">
+          <div className="flex items-center gap-1.5 text-sm text-brand-700 mb-6">
             <MapPin className="w-4 h-4" />
             {listing.address}
           </div>
 
           {/* Specs Bar */}
-          <div className="flex items-center gap-6 p-4 bg-warm-50 rounded-sm mb-6">
+          <div className="flex items-center gap-6 border border-brand-100 p-4 bg-white rounded-sm mb-6">
             {listing.specs.beds && (
-              <div className="flex items-center gap-2 text-sm text-charcoal-700">
+              <div className="flex items-center gap-2 text-sm text-brand-800">
                 <Bed className="w-4 h-4 text-brand-500" />
                 <span className="font-semibold">{listing.specs.beds}</span> Beds
               </div>
             )}
             {listing.specs.baths && (
-              <div className="flex items-center gap-2 text-sm text-charcoal-700">
+              <div className="flex items-center gap-2 text-sm text-brand-800">
                 <Bath className="w-4 h-4 text-brand-500" />
                 <span className="font-semibold">{listing.specs.baths}</span> Baths
               </div>
             )}
             {listing.specs.sqft && (
-              <div className="flex items-center gap-2 text-sm text-charcoal-700">
+              <div className="flex items-center gap-2 text-sm text-brand-800">
                 <Maximize className="w-4 h-4 text-brand-500" />
                 <span className="font-semibold">{listing.specs.sqft.toLocaleString()}</span> SF
               </div>
             )}
           </div>
 
-          <p className="text-charcoal-600 leading-relaxed mb-8">{listing.description}</p>
+          <p className="text-brand-800 leading-relaxed mb-8">{listing.description}</p>
 
           {/* CTA */}
           {listing.status !== 'Sold' ? (
@@ -185,7 +185,7 @@ function ListingModal({ listing, onClose }: { listing: Listing; onClose: () => v
               <ArrowRight className="w-4 h-4" />
             </a>
           ) : (
-            <p className="text-center text-sm text-warm-500 italic">
+            <p className="text-center text-sm text-brand-700 italic">
               This property has been sold. Contact Christine for similar opportunities.
             </p>
           )}
@@ -228,17 +228,17 @@ export default function Listings() {
   })
 
   return (
-    <section id="listings" className="section-padding bg-warm-50">
+    <section id="listings" className="section-padding bg-white">
       <div className="container-max mx-auto">
         <AnimatedSection>
           <div className="text-center mb-12">
             <p className="text-sm font-semibold tracking-[0.2em] uppercase text-brand-600 mb-3">
               Portfolio
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-charcoal-900 mb-4">
+            <h2 className="font-serif text-3xl md:text-4xl text-brand-900 mb-4">
               Featured Listings
             </h2>
-            <p className="text-charcoal-500 max-w-2xl mx-auto">
+            <p className="text-brand-700 max-w-2xl mx-auto">
               Explore past and present properties Christine has represented. From charming
               family homes to high-value commercial investments.
             </p>
@@ -254,8 +254,8 @@ export default function Listings() {
                 onClick={() => setFilter(f.value)}
                 className={`px-5 py-2 text-sm font-medium rounded-sm transition-all duration-200 ${
                   filter === f.value
-                    ? 'bg-charcoal-900 text-white'
-                    : 'bg-white text-charcoal-600 border border-warm-200 hover:border-charcoal-300'
+                    ? 'bg-white border-2 border-brand-600 text-brand-700'
+                    : 'bg-white text-brand-800 border border-brand-200 hover:border-brand-500'
                 }`}
               >
                 {f.label}
@@ -278,7 +278,7 @@ export default function Listings() {
         </motion.div>
 
         {filtered.length === 0 && (
-          <p className="text-center text-warm-500 py-12">
+          <p className="text-center text-brand-700 py-12">
             No listings found for this filter.
           </p>
         )}
