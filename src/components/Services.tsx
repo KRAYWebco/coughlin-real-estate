@@ -63,10 +63,10 @@ export default function Services() {
             <p className="text-sm font-semibold tracking-[0.2em] uppercase text-brand-600 mb-3">
               What I Do
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-charcoal-900 mb-4">
+            <h2 className="font-serif text-3xl md:text-4xl text-brand-900 mb-4">
               Comprehensive Real Estate Services
             </h2>
-            <p className="text-charcoal-500 max-w-2xl mx-auto">
+            <p className="text-brand-700 max-w-2xl mx-auto">
               From your first home to your largest investment, Christine provides expert
               representation across every aspect of real estate.
             </p>
@@ -82,8 +82,8 @@ export default function Services() {
                 onClick={() => setActive(service.id)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-sm text-sm font-semibold transition-all duration-300 ${
                   active === service.id
-                    ? 'bg-brand-500 text-white shadow-md'
-                    : 'bg-warm-100 text-charcoal-600 hover:bg-warm-200'
+                    ? 'bg-white border-2 border-brand-600 text-brand-700 shadow-md'
+                    : 'bg-brand-50 text-brand-800 hover:bg-brand-100'
                 }`}
               >
                 <service.icon className="w-4 h-4" />
@@ -101,15 +101,15 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start bg-warm-50 rounded-sm p-8 md:p-12"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start bg-white border border-brand-200 rounded-sm p-8 md:p-12"
           >
             <div>
               <activeService.icon className="w-12 h-12 text-brand-500 mb-4" />
-              <h3 className="font-serif text-2xl md:text-3xl text-charcoal-900 mb-2">
+              <h3 className="font-serif text-2xl md:text-3xl text-brand-900 mb-2">
                 {activeService.title}
               </h3>
               <p className="text-brand-600 font-medium mb-6">{activeService.subtitle}</p>
-              <p className="text-charcoal-600 leading-relaxed mb-8">
+              <p className="text-brand-800 leading-relaxed mb-8">
                 {activeService.description}
               </p>
               <a
@@ -122,14 +122,14 @@ export default function Services() {
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold tracking-widest uppercase text-warm-500 mb-4">
+              <h4 className="text-sm font-semibold tracking-widest uppercase text-brand-700 mb-4">
                 What's Included
               </h4>
               <ul className="space-y-3">
                 {activeService.features.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-center gap-3 text-charcoal-700 bg-white p-4 rounded-sm border border-warm-200"
+                    className="flex items-center gap-3 text-brand-800 bg-white p-4 rounded-sm border border-brand-200"
                   >
                     <div className="w-2 h-2 bg-brand-500 rounded-full flex-shrink-0" />
                     {feature}

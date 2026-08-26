@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    --color-brand: #d78032;
-    --color-brand-light: #e9bb85;
-    --color-brand-dark: #a65223;
-    --color-bg: #faf9f7;
-    --color-bg-alt: #f3f1ec;
-    --color-text: #2a2a2a;
-    --color-text-muted: #5d5d5d;
-    --color-border: #e6e1d6;
+    --color-brand: #2f9e55;
+    --color-brand-light: #def5e3;
+    --color-brand-dark: #15552f;
+    --color-bg: #ffffff;
+    --color-bg-alt: #f5faf6;
+    --color-text: #173824;
+    --color-text-muted: #55715d;
+    --color-border: #cbded0;
   }
 
   * {
@@ -40,11 +40,10 @@
   }
 
   ::selection {
-    background-color: #d7803240;
+    background-color: #2f9e5540;
     color: var(--color-text);
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -59,7 +58,7 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #c1b49c;
+    background: #a3bba8;
   }
 }
 
@@ -73,27 +72,27 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-8 py-3.5 bg-brand-500 text-white font-semibold
-           rounded-sm hover:bg-brand-600 transition-all duration-300
-           shadow-md hover:shadow-lg active:scale-[0.98]
+    @apply inline-flex items-center gap-2 px-8 py-3.5 bg-white border-2 border-brand-600 text-brand-700 font-semibold
+           rounded-sm hover:bg-brand-600 hover:text-white transition-all duration-300
+           shadow-sm hover:shadow-md active:scale-[0.98]
            focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 px-8 py-3.5 border-2 border-brand-500 text-brand-600
-           font-semibold rounded-sm hover:bg-brand-500 hover:text-white transition-all duration-300
+    @apply inline-flex items-center gap-2 px-8 py-3.5 border-2 border-brand-500 text-brand-700
+           font-semibold rounded-sm hover:bg-brand-50 transition-all duration-300
            focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2;
   }
 
   .input-field {
-    @apply w-full px-4 py-3 bg-white border border-warm-200 rounded-sm
-           text-charcoal-900 placeholder:text-charcoal-400
-           focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-brand-400
+    @apply w-full px-4 py-3 bg-white border border-brand-200 rounded-sm
+           text-charcoal-900 placeholder:text-warm-400
+           focus:outline-none focus:ring-2 focus:ring-brand-300 focus:border-brand-500
            transition-all duration-200;
   }
 
   .badge {
     @apply inline-flex items-center px-3 py-1 text-xs font-semibold tracking-wider
-           uppercase rounded-sm bg-brand-100 text-brand-700;
+           uppercase rounded-sm bg-brand-50 text-brand-700 border border-brand-200;
   }
 }

@@ -25,17 +25,17 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-white/95 backdrop-blur-md shadow-sm'
-          : 'bg-transparent'
+          : 'bg-white/95'
       }`}
     >
       <div className="container-max mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="/" className="flex flex-col leading-none">
-            <span className="font-serif text-lg md:text-xl font-semibold text-charcoal-900">
+            <span className="font-serif text-lg md:text-xl font-semibold text-brand-900">
               Christine Coughlin
             </span>
-            <span className="text-[10px] md:text-xs tracking-[0.2em] uppercase text-warm-500 font-medium">
+            <span className="text-[10px] md:text-xs tracking-[0.2em] uppercase text-brand-700 font-medium">
               Licensed Broker
             </span>
           </a>
@@ -46,7 +46,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-charcoal-600 hover:text-brand-600 transition-colors duration-200"
+                className="text-sm font-medium text-brand-800 hover:text-brand-600 transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -70,7 +70,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-charcoal-700"
+            className="md:hidden p-2 text-brand-800"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -84,7 +84,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-warm-200 overflow-hidden"
+            className="md:hidden bg-white border-t border-brand-200 overflow-hidden"
           >
             <div className="px-4 py-4 space-y-3">
               {navLinks.map((link) => (
@@ -92,12 +92,12 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block text-base font-medium text-charcoal-700 hover:text-brand-600 py-2"
+                  className="block text-base font-medium text-brand-800 hover:text-brand-600 py-2"
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="pt-3 border-t border-warm-200 space-y-3">
+              <div className="pt-3 border-t border-brand-200 space-y-3">
                 <a
                   href="tel:2195085555"
                   className="flex items-center gap-2 text-sm font-semibold text-brand-600"

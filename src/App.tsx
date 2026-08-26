@@ -13,10 +13,12 @@ export default function App() {
         toastOptions={{
           duration: 4000,
           style: {
-            background: '#2a2a2a',
-            color: '#faf9f7',
+            background: '#ffffff',
+            color: '#173824',
+            border: '1px solid #bde8c7',
             borderRadius: '2px',
             fontFamily: 'Inter, sans-serif',
+            boxShadow: '0 8px 24px rgba(21, 85, 47, 0.12)',
           },
         }}
       />

@@ -50,10 +50,10 @@ export default function RequireAuth({ children }: { children: React.ReactNode })
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-warm-50">
+      <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
           <div className="w-8 h-8 mx-auto border-2 border-brand-500 border-t-transparent rounded-full animate-spin" />
-          <p className="mt-4 text-sm text-warm-500">Checking admin access…</p>
+          <p className="mt-4 text-sm text-brand-700">Checking admin access…</p>
         </div>
       </div>
     )
